@@ -1,0 +1,27 @@
+import java.util.*;
+public class ExerciseSix
+{
+    //Megadható attributumok
+    private double weight, feet, inches;
+    final double kgPerPound = 0.45359237;
+    final double metPerInch = 0.0254;
+    //Adatok bekérése
+    public ExerciseSix()
+    {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Adja meg a súlyát: ");
+        weight = reader.nextDouble();
+        System.out.println("Adja meg a magasságát: ");
+        feet = reader.nextDouble();
+        inches = reader.nextDouble();
+    }
+    //Számítás
+    public void bodyMassIndex()
+    {
+        double wtInKilos = weight * kgPerPound;
+        double htInInches = ((feet / 12) + inches);
+        double htInMeters = htInInches * metPerInch;
+        double bmi = wtInKilos / (htInMeters * htInMeters);
+        System.out.printf("Your BMI is %5.2f\n" , bmi);
+    }
+}
